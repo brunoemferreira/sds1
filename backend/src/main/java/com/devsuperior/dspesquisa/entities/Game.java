@@ -32,6 +32,7 @@ public class Game implements Serializable {
 	@JoinColumn(name ="genre_id")
 	private Genre genre;
 
+
 	@OneToMany(mappedBy = "game")
 	private List<Record> records = new ArrayList<>();
 		
@@ -63,11 +64,11 @@ public class Game implements Serializable {
 		this.title = title;
 	}
 
-	public Platform getPlataform() {
+	public Platform getPlatform() {
 		return platform;
 	}
 
-	public void setPlataform(Platform platform) {
+	public void setPlatform(Platform platform) {
 		this.platform = platform;
 	}
 
