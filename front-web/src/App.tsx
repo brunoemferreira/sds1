@@ -1,16 +1,10 @@
 import React from "react";
-import Header from "./components/Header/index";
 
 import "./App.css";
-import Home from "./pages/Home/index";
+import Routes from "./Routes";
 
 function App() {
-  return (
-    <>
-      <Header />
-      <Home />
-    </>
-  );
+  return <Routes />;
 }
 
 export default App;
