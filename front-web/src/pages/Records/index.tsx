@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+
 import axios from "axios";
 import { RecordsResponse } from "./types";
 import { formatDate } from "./helpers";
 import Pagination from "./Pagination/index";
+import Filters from "./../../components/Filters/index";
 
 import "./styles.css";
 
@@ -15,7 +16,7 @@ const Records = () => {
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/records?linesPerPage=${activePage}`)
+      .get(`${BASE_URL}/records?linesPerPage=12&page=${activePage}`)
       .then((response) => setRecordsResponse(response.data));
   }, [activePage]);
 
@@ -25,11 +26,7 @@ const Records = () => {
 
   return (
     <div className="page-container">
-      <div className="filters-containers records-actions">
-        <Link to="/charts">
-          <button className="action-filters">VER GRÁFICOS</button>
-        </Link>
-      </div>
+      <Filters link={"/charts"} linkText={"VER GRÁFICO"} />
       <table className="records-table" cellPadding="0" cellSpacing="0">
         <thead>
           <tr>
