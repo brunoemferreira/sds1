@@ -8,7 +8,7 @@ import Filters from "./../../components/Filters/index";
 
 import "./styles.css";
 
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = "https://sds1-brunoemf.herokuapp.com";
 
 const Records = () => {
   const [recordsResponse, setRecordsResponse] = useState<RecordsResponse>();
